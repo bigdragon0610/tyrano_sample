@@ -1,46 +1,50 @@
 *start
 
-[title name="走るか寝るかするメロス"]
+[title name="吾輩は猫である"]
 [hidemenubutton]
 [wait time=200]
 [freeimage layer="base"]
 
-「走るか寝るかするメロス」[l][r]
+吾輩は猫である。[l][r]
 
-メロスは激怒した。[l][r]
+名前は
+[iscript]
+f.DEFAULT_NAME = "まだ無い";
+f.name = prompt("名前は？");
+if (!f.name) f.name = f.DEFAULT_NAME;
+[endscript]
+[emb exp="f.name"]。[l][r]
 
-必ず、かの邪智暴虐の王を除かねばならぬと決意した。[l][r]
+[if exp="f.name === f.DEFAULT_NAME"]
+
+どこで生れたかとんと見当がつかぬ。[l][r]
+
+何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。[l][r]
+
+[cm]
 
 (中略)[l][r]
 
-ああ、何もかも、ばかばかしい。私は、醜い裏切り者だ。どうとも、勝手にするがよい。やんぬる哉。[l][r]
-メロスは...[l][r]
-
-[link target=*tag_sleep] →寝る [endlink][r]
-[link target=*tag_run] →走る [endlink][r]
-[s]
-
-*tag_sleep
-
 [cm]
 
-[bg storage=sleep.jpg time=500]
+吾輩は死ぬ。[l][r]
+死んでこの太平を得る。[l][r]
+太平は死ななければ得られぬ。[l][r]
+南無阿弥陀仏南無阿弥陀仏。[l][r]
+ありがたいありがたい。[l][r]
 
-メロスは死んだように深く眠った。[l][r]
-勇者は、ひどく赤面した。[r]
+【 TRUE END 】[l][cm]
+
+[else]
+
+どこで生まれたかといえば、それは矢上に違いない。[l][r]
+
+何でもごつごつとした急な坂の上でニャーニャー泣いていた事を記憶している。[l][r]
+
+吾輩はここで始めて理工学生というものを見た。[l][r]
 
 【 BAD END 】[l][cm]
 
-[jump target=*start]
-
-*tag_run
-
-[bg storage=run.jpg time=500]
-
-[cm]
-メロスは黒い風のように走った。[l][r]
-陽は、ゆらゆら地平線に没し、まさに最後の一片の残光も、消えようとした時、メロスは疾風の如く刑場に突入した。間に合った。[r]
-
-【 GOOD END 】[l][cm]
+[endif]
 
 [jump target=*start]
